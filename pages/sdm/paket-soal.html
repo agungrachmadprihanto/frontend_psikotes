@@ -70,7 +70,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->   
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="../../index-sdm.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Dashboard              
@@ -78,30 +78,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="calon-kary.html" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Calon Karyawan
-                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../../pages/layout/top-nav.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tambah Karyawan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Karyawan</p>
-                </a>
-              </li>            
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="paket-soal.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Paket Soal              
@@ -117,7 +102,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="jadwal-ujian.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Jadwal Ujian              
@@ -203,7 +188,7 @@
                 <div class="col-md-12">
                   <div class="card card-danger">
                     <div class="card-header">
-                      <h3 class="card-title">List Calon Karyawan</h3>                 
+                      <h3 class="card-title">List Paket Soal</h3>                 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                           <i class="fas fa-minus"></i>
@@ -215,22 +200,20 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Email</th>                   
-                            <th scope="col">Nik</th>                   
-                            <th scope="col">Posisi</th>
+                            <th scope="col">Paket Soal</th>
+                            <th scope="col">Time</th>                   
                             <th scope="col">Action</th>                   
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>udin sedunia</td>
-                            <td>udinseduni@gmail.com</td>                  
-                            <td>123456789123456</td>                  
-                            <td>Marketing</td>
+                            <td>DISC</td>
+                            <td>80 Menit</td>                  
                             <td>
-                              <a href="" class="btn btn-primary">Edit</a>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">
+                                Edit/Views
+                              </button>
                               <a href="" class="btn btn-danger">Delete</a>
                             </td>                  
                           </tr>
@@ -248,6 +231,46 @@
  
     <!-- /.content -->
   </div>
+
+
+<!-- Modal Edit and View -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="nama paket">Paket Soal</label>
+            <input type="text" id="paket_soal" name="paket_soal" class="form-control">
+          </div>
+          <div class="form-group col-6">
+            <label for="atasan">time</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control">
+              <div class="input-group-append">
+                <span class="input-group-text">Menit</span>
+              </div>
+            </div>
+          </div>
+        </div>    
+        <div class="form-group">
+          <label for="atasan">Deskripsi</label>      
+            <div id="summernotee">Hello Summernote</div>         
+        </div>    
+      </div>    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -299,6 +322,12 @@
       theme: "monokai"
     });
   });
+</script>
+<script>
+  $('#summernotee').summernote({
+  dialogsInBody: true
+  //,airMode: true
+});
 </script>
 
 

@@ -131,12 +131,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Tambah Calon karyawan</h1>
+            <h1 class="m-0">Jadwal Ujain</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Calon Karyawan</li>
+              <li class="breadcrumb-item active">Jadwal ujian</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -151,7 +151,7 @@
                 <div class="col-md-12">
                   <div class="card card-primary">
                     <div class="card-header">
-                      <h3 class="card-title">Add Data Calon Karyawan</h3>                 
+                      <h3 class="card-title">Tambah Jadwal Ujian</h3>                 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                           <i class="fas fa-minus"></i>
@@ -161,25 +161,49 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="form-group col-md-6">
-                          <label for="inputName">Nama Lengkap</label>
-                          <input type="text" id="namalengkap" name="namalengkap" class="form-control">
+                          <label for="inputName">Nama Ujian</label>
+                          <input type="text" id="namaUjian" name="namaUjian" class="form-control" placeholder="Exp : Ujian Marketing - Hari Selesa">
                         </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputName">Email</label>
-                          <input type="email" id="email" name="email" class="form-control">
-                        </div> 
+                        <div class="form-group col-md-4">
+                          <label for="">Waktu Mengerjakan Ujian</label>
+                          <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
+                            <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                        </div>
+                      </div>                      
+                      <div>
+                        <div class="form-row align-items-center">
+                          <div class="col-sm-3 my-1">
+                            <label class="sr-only" for="inlineFormInputEmail">Email</label>
+                            <input type="email" class="form-control" id="inlineFormInputEmail" placeholder="Email Calon Karyawan">
+                          </div>
+                          <div class="col-auto my-1">
+                            <button type="submit" class="btn btn-primary">Tambah</button>
+                          </div>
+                        </div>
                       </div>
-                      <div class="row">
-                        <div class="form-group col-md-6">
-                          <label for="inputDescription">Nik</label>
-                          <input type="number" id="nik" name="nik" class="form-control">
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputDescription">Posisi</label>
-                          <input type="text" id="posisi" name="posisi" class="form-control">
-                        </div>
-                      </div>
-                      <button class="btn btn-danger">Save Data</button>             
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Posisi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Udin</td>
+                            <td>udinsedunia@gmail.com</td>
+                            <td>Marketing</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button class="btn btn-primary">Save & Kirim Email</button>    
                     </div>
                     <!-- /.card-body -->
                   </div>
@@ -188,7 +212,7 @@
                 <div class="col-md-12">
                   <div class="card card-danger">
                     <div class="card-header">
-                      <h3 class="card-title">List Calon Karyawan</h3>                 
+                      <h3 class="card-title">List Jadwal Ujian</h3>                 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                           <i class="fas fa-minus"></i>
@@ -200,24 +224,24 @@
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Email</th>                   
-                            <th scope="col">Nik</th>                   
-                            <th scope="col">Posisi</th>
-                            <th scope="col">Action</th>                   
+                            <th scope="col">Nama Ujian</th>
+                            <th scope="col">Tanggal Ujian</th>                   
+                            <th scope="col">Status</th>                   
+                            <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>udin sedunia</td>
-                            <td>udinseduni@gmail.com</td>                  
-                            <td>123456789123456</td>                  
-                            <td>Marketing</td>
+                            <td>Ujian Marketing di Hari Senja</td>
+                            <td>12/07/2023 4:05 PM</td>
+                            <td>Pending</td>                  
                             <td>
-                              <a href="" class="btn btn-primary">Edit</a>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">
+                                Views
+                              </button>
                               <a href="" class="btn btn-danger">Delete</a>
-                            </td>                  
+                            </td>
                           </tr>
                         </tbody>
                       </table>             
@@ -233,6 +257,64 @@
  
     <!-- /.content -->
   </div>
+
+
+<!-- Modal Edit and View -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="nama paket">Nama Ujian</label>
+            <input type="text" id="ujian" name="ujian" class="form-control" placeholder="Ujian Marketing - Hari Selasa">
+          </div>
+          <div class="form-group col-4">
+            <label for="atasan">Tanggal Ujian</label>
+            <div class="input-group mb-4">
+              <div class="input-group date" id="reservationdatetimee" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
+                <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>    
+        <div class="form-group">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Email</th>
+                <th scope="col">Posisi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Udin</td>
+                <td>udinsedunia@gmail.com</td>
+                <td>Marketing</td>
+              </tr>
+            </tbody>
+          </table>      
+        </div>    
+      </div>    
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
   
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -273,6 +355,33 @@
 <script src="../../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  });
+</script>
+<script>
+  $('#summernotee').summernote({
+  dialogsInBody: true
+  //,airMode: true
+});
+</script>
+<script>
+      //Date and time picker
+      $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });      
+</script>
+<script>
+  $('#reservationdatetimee').datetimepicker({ 
+    icons: { time: 'far fa-clock' }, 
+    dialogsInBody: true });
+</script>
 
 
 </body>
